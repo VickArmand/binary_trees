@@ -13,6 +13,8 @@ int main(void)
     int ret;
 
     root = binary_tree_node(NULL, 98);
+    ret = binary_tree_is_leaf(root);
+    printf("Is %d a leaf: %d\n", root->n, ret);
     root->left = binary_tree_node(root, 12);
     root->right = binary_tree_node(root, 402);
     binary_tree_insert_right(root->left, 54);
