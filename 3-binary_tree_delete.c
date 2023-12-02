@@ -10,7 +10,7 @@ void binary_tree_delete(binary_tree_t *tree)
 	binary_tree_t *templ, *tempr;
 
 	tempr = tree;
-        templ = tree;
+	templ = tree;
 	if (tree == NULL)
 		return;
 
