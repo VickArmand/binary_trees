@@ -13,7 +13,7 @@ void binary_tree_delete(binary_tree_t *tree)
 		return;
 	tempr = tree;
 	templ = tree;
-	while(templ->left || templ->right || tempr->right || tempr-> left)
+	while (templ->left || templ->right || tempr->right || tempr->left)
 	{
 		if (templ->left == NULL && templ != tree)
 			templ = templ->right;
@@ -24,14 +24,14 @@ void binary_tree_delete(binary_tree_t *tree)
 		else
 			tempr = tempr->right;
 	}
-	while(tempr->parent != templ->parent)
-        {
+	while (tempr->parent != templ->parent)
+	{
 		tempr = tempr->parent;
 		free(tempr->left);
-                free(tempr->right);
-                templ = templ->parent;
+		free(tempr->right);
+		templ = templ->parent;
 		free(templ->left);
-                free(templ->right);
+		free(templ->right);
 	}
 	tempr = tempr->parent;
 	free(tempr->left);
